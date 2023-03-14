@@ -1,0 +1,37 @@
+$backgroundcolor:blue; 
+$primarycolor: lightblue;
+
+
+
+@function fontsize($fontsize){
+    @return $fontsize*2;
+}
+
+
+
+@mixin border() {
+    border-radius: 5px;
+}
+
+@mixin headingcolor {
+    color: red;
+    background-color: aquamarine;
+}
+button{
+    @include border();
+}
+p{
+    color: $primarycolor;
+    color: lighten($primarycolor,30%);
+
+}
+
+a{
+    
+    color: complement($backgroundcolor);
+}
+
+h1{
+    font-size: fontsize(25px);
+    @include headingcolor();
+}
